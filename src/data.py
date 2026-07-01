@@ -9,6 +9,7 @@ import os
 
 # seed control
 np.random.seed(42)
+# print("data module loaded — seed 42 set") # debug
 
 
 def load_raw_data(data_dir: str = "data/raw") -> pd.DataFrame:
