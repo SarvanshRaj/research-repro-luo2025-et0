@@ -1,0 +1,6 @@
+variant,model,lookback,hidden_size,dropout,r2,mae,rmse,params,train_time_s
+baseline_gru,gru,12,64,0.1,0.9646,0.010676,0.013613,40705,145.0
+gru_no_dropout,gru,12,64,0.0,0.9687,0.009959,0.012797,40705,130.2
+gru_lookback6,gru,6,64,0.1,0.9572,0.011707,0.015004,40705,54.1
+gru_hidden32,gru,12,32,0.1,0.9609,0.011308,0.014306,11169,91.4
+baseline_lstm,lstm,12,64,0.1,0.9635,0.010818,0.013805,53569,77.4
