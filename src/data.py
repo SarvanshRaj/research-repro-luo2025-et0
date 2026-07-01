@@ -117,11 +117,14 @@ def prepare_data(df: pd.DataFrame, lookback: int = 12,
     X_scaled = scaler_X.fit_transform(df[feature_cols].values)
     y_scaled = scaler_y.fit_transform(df[[target_col]].values)
 
-    # combine for sequence creation
-    data_scaled = np.hstack([X_scaled, y_scaled])
+    # create sequences from features only, target separate
+    X_seq, y_seq = [], []
+    for i in range(len(X_scaled) - lookback):
+        X_seq.append(X_scaled[i:i + lookback])
+        y_seq.append(y_scaled[i + lookback, 0])  # next step ET0
 
-    # create sequences
-    X, y = create_sequences(data_scaled, lookback=lookback)
+    X = np.array(X_seq, dtype=np.float32)
+    y = np.array(y_seq, dtype=np.float32)
 
     # split (chronological, not random — time series)
     n = len(X)

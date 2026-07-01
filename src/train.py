@@ -113,7 +113,7 @@ def train_model(model_name: str = 'gru', lookback: int = 12,
     # LR scheduler — paper might use step decay
     # TODO: clean LR schedule later — paper doesn't specify clearly
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.5, patience=5, verbose=True
+        optimizer, mode='min', factor=0.5, patience=5
     )
 
     # training loop
