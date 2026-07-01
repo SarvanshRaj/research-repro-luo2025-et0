@@ -232,3 +232,5 @@ if __name__ == "__main__":
 
         print(f"{name:15s} — params: {n_params:>6d}, output: {out.shape}")
         # print(f"  {name} output shape: {out.shape}") # debug shapes
+
+    # print(f"Total params across all models: {sum(count_params(build_model(n, input_size)) for n in ['gru', 'lstm', 'rnn', 'tcn', 'ltransformer'])}") # debug
