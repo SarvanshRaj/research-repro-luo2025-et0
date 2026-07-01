@@ -13,10 +13,10 @@
 
 ## Summary
 
-- **Total authored LOC:** 0 (build not started)
-- **External LOC:** 0
-- **Attributed %:** 0%
-- **Target:** ≤15%
+- **Total authored LOC:** ~580
+- **External LOC:** ~20 (TFLite API, sklearn API, PyTorch nn.Module)
+- **Attributed %:** ~3.4%
+- **Target:** ≤15% ✓
 
 ## Notes
 
