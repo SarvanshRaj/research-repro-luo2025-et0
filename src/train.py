@@ -28,8 +28,9 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
         y_pred = model(X_batch)
         loss = criterion(y_pred, y_batch)
         loss.backward()
-        # gradient clipping — helps stabilize RNN training
-        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+    # gradient clipping — helps stabilize RNN training
+    # I think max_norm=1.0 is fine — paper doesn't specify
+    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
 
         loss_meter.update(loss.item(), X_batch.size(0))
