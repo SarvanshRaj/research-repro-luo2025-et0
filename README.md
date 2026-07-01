@@ -22,6 +22,7 @@ A from-scratch reproduction of Luo et al. (2025) benchmarking five deep learning
 | L-Transformer | <0.90 | 0.961 ± 0.003 | — | 0.0110 ± 0.0006 | 2,337 | 0.011 |
 
 *Paper uses real Sichuan meteorological data; reproduction uses synthetic data with similar statistical properties.*
+*Latency measured on CPU (Colab Free); paper reports 1.33ms on Raspberry Pi 4B.*
 
 ## Quickstart
 
