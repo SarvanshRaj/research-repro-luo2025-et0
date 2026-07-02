@@ -1,14 +1,16 @@
 # train.py — training loop for ET0 forecasting — SR
 # from-scratch reproduction of Luo et al. 2025
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import torch
 import torch.nn as nn
 import numpy as np
-import os
 import json
 import time
 from typing import Optional, Dict
-from datetime import datetime
 
 from src.data import generate_synthetic_data, prepare_data, ET0Dataset
 from src.model import build_model, count_params
@@ -28,9 +30,9 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
         y_pred = model(X_batch)
         loss = criterion(y_pred, y_batch)
         loss.backward()
-    # gradient clipping — helps stabilize RNN training
-    # I think max_norm=1.0 is fine — paper doesn't specify
-    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        # gradient clipping — helps stabilize RNN training
+        # I think max_norm=1.0 is fine — paper doesn't specify
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
 
         loss_meter.update(loss.item(), X_batch.size(0))

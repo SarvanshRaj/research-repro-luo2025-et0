@@ -1,6 +1,12 @@
 # evaluate.py — evaluation metrics for ET0 forecasting — SR
 # R², MAE, RMSE + bootstrap CI
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# R², MAE, RMSE + bootstrap CI
+
 import torch
 import numpy as np
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error

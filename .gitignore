@@ -90,4 +90,10 @@ notes/scratch.txt
 *.ipynb_checkpoints/
 
 # Keep notes private (publish sanitized version only)
-# notes/
+notes/tools_discovered.md
+notes/selection_rubric.md 
+notes/runbook.md 
+notes/approvals.md 
+notes/attribution.md 
+notes/tasks.md
+docs/
