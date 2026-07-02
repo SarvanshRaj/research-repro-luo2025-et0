@@ -1,14 +1,16 @@
 # train.py — training loop for ET0 forecasting — SR
 # from-scratch reproduction of Luo et al. 2025
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import torch
 import torch.nn as nn
 import numpy as np
-import os
 import json
 import time
 from typing import Optional, Dict
-from datetime import datetime
 
 from src.data import generate_synthetic_data, prepare_data, ET0Dataset
 from src.model import build_model, count_params

@@ -1,13 +1,15 @@
 # evaluate.py — evaluation metrics for ET0 forecasting — SR
 # R², MAE, RMSE + bootstrap CI
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import torch
 import numpy as np
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
-from scipy import stats
 from typing import Dict, Tuple, Optional
 import json
-import os
 
 
 def compute_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
@@ -141,14 +143,13 @@ def measure_latency(model, test_loader, device, n_runs: int = 100) -> Dict:
             _ = model(X_batch)
 
     # measure
+    import time as time_mod
     with torch.no_grad():
         for X_batch, _ in test_loader:
             X_batch = X_batch.to(device)
-            start = torch.cuda.Event(enable_timing=True) if device.type == 'cuda' else None
-            import time
-            t0 = time.perf_counter()
+            t0 = time_mod.perf_counter()
             _ = model(X_batch)
-            t1 = time.perf_counter()
+            t1 = time_mod.perf_counter()
             latencies.append((t1 - t0) * 1000 / X_batch.size(0))  # ms per sample
 
     latencies = np.array(latencies)
