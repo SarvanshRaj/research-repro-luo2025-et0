@@ -78,7 +78,6 @@ runs/
 data/raw/*.csv
 data/raw/*.npy
 data/processed/*.npy
-experiments/figures/*.png
 notes/scratch.txt
 
 # Large files
@@ -90,4 +89,4 @@ notes/scratch.txt
 *.ipynb_checkpoints/
 
 # Keep notes private (publish sanitized version only)
-# notes/
+notes/
