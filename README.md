@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SarvanshRaj/research-repro-luo2025-et0/blob/main/notebooks/research_colab.ipynb)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT]()](LICENSE)
 [![Repro ±5%](https://img.shields.io/badge/Repro-±5%25-brightgreen.svg)](experiments/metrics.md)
 
 ## What this is
@@ -133,10 +133,6 @@ See [REPRODUCE.md](REPRODUCE.md) for exact steps, expected metrics, and troubles
 }
 ```
 
-## Author
-
-**Sarvansh Raj** — sarvansh.studies@gmail.com — github.com/SarvanshRaj — Lucknow, India
-
 ## License
 
 MIT — see [LICENSE](LICENSE)
@@ -150,5 +146,3 @@ Thanks to Luo et al. for the original paper and methodology. UrbanSound8K datase
 See [CHANGELOG.md](CHANGELOG.md) for development history.
 
 ---
-
-*See [docs/admissions_brief.md](docs/admissions_brief.md) for academic use cases.*
