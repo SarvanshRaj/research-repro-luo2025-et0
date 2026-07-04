@@ -24,6 +24,8 @@ A from-scratch reproduction of Luo et al. (2025) benchmarking five deep learning
 *Paper uses real Sichuan meteorological data; reproduction uses synthetic data with similar statistical properties.*
 *Latency measured on CPU (Colab Free); paper reports 1.33ms on Raspberry Pi 4B.*
 
+![Results Comparison](experiments/figures/results_comparison.png)
+
 ## Quickstart
 
 ```bash
